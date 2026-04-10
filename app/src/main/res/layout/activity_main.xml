@@ -7,13 +7,82 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="Aulia Arief-2407112796 | Afdhal Fidi Ansori-2407126812"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher_round"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Username"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress2"
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="your email..."
+                android:inputType="textEmailAddress"
+                android:textColor="#878787"
+                android:textSize="18sp"
+                android:minHeight="48dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Password"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="your pass..."
+                android:inputType="textPassword"
+                android:minHeight="48dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textAlignment="center"
+            tools:visibility="visible"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
