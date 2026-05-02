@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment03"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="130dp"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/btnToFragment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRAGMENT 01"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <Button
+        android:id="@+id/btnToFragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRAGMENT 02"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <Button
+        android:id="@+id/btnToFragment3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRAGMENT 03"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+        android:id="@+id/btnToActivity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACTIVITY 2"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="418dp" />
+</LinearLayout>
