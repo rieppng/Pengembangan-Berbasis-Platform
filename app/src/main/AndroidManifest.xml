@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+        android:name=".WatchWatchApp" → daftarkan Application class kita.
+        Ini memastikan dark mode preference diterapkan sebelum Activity manapun dibuka.
+    -->
+    <application
+        android:name=".WatchWatchApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WatchWatch">
+
+        <!-- Halaman pertama yang dibuka -->
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Container utama Bottom Navigation + Fragment -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+
+        <!-- Halaman detail satu artikel -->
+        <activity
+            android:name=".ui.DetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Halaman statis: About, Disclaimer, Privacy Policy, Kontak -->
+        <activity
+            android:name=".ui.StaticPageActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+    </application>
+
+</manifest>

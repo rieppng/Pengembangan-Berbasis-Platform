@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+        Ikon bookmark di toolbar DetailActivity.
+        Ikonnya akan berganti antara ic_bookmark_outline (belum disimpan)
+        dan ic_bookmark (sudah disimpan) secara programatik.
+    -->
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/ic_bookmark_outline"
+        android:title="Bookmark"
+        app:showAsAction="always" />
+
+</menu>
