@@ -10,47 +10,6 @@
         android:orientation="vertical"
         android:paddingBottom="32dp">
 
-        <!-- TAMPILAN -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="8dp"
-            android:text="TAMPILAN"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingHorizontal="20dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dark Mode"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="15sp" />
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switch_dark_mode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:alpha="0.12"
-            android:background="@android:color/black" />
-
         <!-- INFORMASI -->
         <TextView
             android:layout_width="match_parent"

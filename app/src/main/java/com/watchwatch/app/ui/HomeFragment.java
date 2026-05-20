@@ -10,11 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
-import com.watchwatch.app.R;
 import com.watchwatch.app.adapter.LatestPostAdapter;
 import com.watchwatch.app.adapter.TrendingAdapter;
 import com.watchwatch.app.databinding.FragmentHomeBinding;
@@ -75,9 +73,6 @@ public class HomeFragment extends Fragment {
                 navigateToDetail((Post) binding.cardHero.getTag());
         });
 
-        binding.tvSeeAll.setOnClickListener(v ->
-                Navigation.findNavController(requireView()).navigate(R.id.searchFragment));
-
         trendingAdapter.setOnPostClickListener(this::navigateToDetail);
         latestPostAdapter.setOnPostClickListener(this::navigateToDetail);
     }
@@ -108,12 +103,10 @@ public class HomeFragment extends Fragment {
         Post heroPost = posts.get(0);
         binding.tvHeroTitle.setText(heroPost.getTitleRendered());
         binding.cardHero.setTag(heroPost);
-
         Glide.with(this).load(heroPost.getFeaturedImageUrl())
                 .centerCrop().into(binding.ivHero);
 
-        if (posts.size() > 1)
-            latestPostAdapter.setPosts(posts.subList(1, posts.size()));
+        latestPostAdapter.setPosts(posts);
     }
 
     @Override
