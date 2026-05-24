@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
     private DetailViewModel viewModel;
     private BookmarkViewModel bookmarkViewModel;
 
-    private Post currentPost;      // disimpan untuk keperluan bookmark
+    private Post currentPost;
     private boolean isBookmarked = false;
 
     @Override
@@ -52,7 +52,6 @@ public class DetailActivity extends AppCompatActivity {
         binding.toolbar.setTitle(title != null ? title : "Detail Artikel");
         binding.toolbar.setNavigationOnClickListener(v -> finish());
 
-        // Tambahkan ikon bookmark ke toolbar
         binding.toolbar.inflateMenu(R.menu.menu_detail);
         binding.toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_bookmark) {
@@ -89,7 +88,6 @@ public class DetailActivity extends AppCompatActivity {
                 Toast.makeText(this, error, Toast.LENGTH_LONG).show();
         });
 
-        // Observe status bookmark — ikon toolbar otomatis berubah
         bookmarkViewModel.isBookmarked(postId).observe(this, count -> {
             isBookmarked = count != null && count > 0;
             updateBookmarkIcon();
@@ -136,13 +134,12 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    /** Ganti ikon bookmark sesuai status */
     private void updateBookmarkIcon() {
         MenuItem item = binding.toolbar.getMenu().findItem(R.id.action_bookmark);
         if (item == null) return;
         item.setIcon(isBookmarked
-                ? R.drawable.ic_bookmark          // ikon penuh = sudah disimpan
-                : R.drawable.ic_bookmark_outline); // ikon outline = belum disimpan
+                ? R.drawable.ic_bookmark
+                : R.drawable.ic_bookmark_outline);
     }
 
     /** Simpan atau hapus bookmark saat ikon diklik */

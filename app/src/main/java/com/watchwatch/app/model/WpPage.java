@@ -1,12 +1,5 @@
 package com.watchwatch.app.model;
 
-/**
- * Model untuk halaman statis WordPress (About, Disclaimer, dll).
- * Endpoint: GET /wp-json/wp/v2/pages?slug=about
- *
- * Berbeda dari Post, halaman tidak punya kategori/tag.
- * Kita hanya butuh judul dan konten untuk ditampilkan di Settings.
- */
 public class WpPage {
 
     private int id;

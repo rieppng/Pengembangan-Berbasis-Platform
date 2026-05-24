@@ -58,7 +58,6 @@ public class ListReviewFragment extends Fragment {
 
     private void setupToolbar(String categoryName) {
         binding.toolbar.setTitle(categoryName);
-        // Tombol back: kembali ke halaman sebelumnya via NavController
         binding.toolbar.setNavigationOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
     }

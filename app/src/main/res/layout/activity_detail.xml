@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <!-- Toolbar dengan tombol back -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Loading indicator -->
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
@@ -36,7 +34,6 @@
                 android:orientation="vertical"
                 android:paddingBottom="32dp">
 
-                <!-- Gambar utama artikel -->
                 <ImageView
                     android:id="@+id/iv_featured"
                     android:layout_width="match_parent"
@@ -50,7 +47,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Judul artikel -->
                     <TextView
                         android:id="@+id/tv_title"
                         android:layout_width="match_parent"
@@ -61,7 +57,6 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <!-- Baris kategori + tanggal -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -93,7 +88,6 @@
 
                     </LinearLayout>
 
-                    <!-- Garis pemisah -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -101,12 +95,6 @@
                         android:alpha="0.2"
                         android:background="@android:color/black" />
 
-                    <!--
-                        Konten artikel dirender oleh Html.fromHtml().
-                        Tag yang didukung: <b>, <i>, <u>, <p>, <br>,
-                        <h1>-<h6>, <ul>, <ol>, <li>, <a>.
-                        Tag <ul> dan <li> otomatis jadi bullet list.
-                    -->
                     <TextView
                         android:id="@+id/tv_content"
                         android:layout_width="match_parent"
@@ -116,11 +104,6 @@
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="15sp" />
 
-                    <!--
-                        Tombol Shopee — hidden by default.
-                        Ditampilkan oleh DetailActivity jika Jsoup
-                        berhasil menemukan link "Link Shopee" di konten.
-                    -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_shopee"
                         android:layout_width="match_parent"

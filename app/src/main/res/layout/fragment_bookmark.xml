@@ -13,7 +13,6 @@
         android:clipToPadding="false"
         android:visibility="gone" />
 
-    <!-- Empty state: teks saja, tanpa icon -->
     <LinearLayout
         android:id="@+id/tv_empty"
         android:layout_width="wrap_content"

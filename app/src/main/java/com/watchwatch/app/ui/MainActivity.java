@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
 
-        // Sembunyikan bottom navigation saat berada di halaman sub-level
-        // (halaman yang bukan tab utama, seperti ListReviewFragment)
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.listReviewFragment) {
                 binding.bottomNavigation.setVisibility(View.GONE);

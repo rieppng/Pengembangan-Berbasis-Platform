@@ -46,7 +46,7 @@ public class CategoryFragment extends Fragment {
 
     private void setupRecyclerView() {
         adapter = new CategoryAdapter();
-        // Single column — lebih bersih dari grid
+
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvCategories.setAdapter(adapter);
 

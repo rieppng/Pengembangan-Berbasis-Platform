@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Background warna (di-set secara programatik di CategoryAdapter) -->
+        <!-- Background warna -->
         <View
             android:id="@+id/view_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!-- Nama kategori di tengah -->
+        <!-- Nama kategori -->
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="match_parent"

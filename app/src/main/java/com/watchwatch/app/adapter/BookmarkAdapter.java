@@ -78,12 +78,11 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
                     .centerCrop()
                     .into(binding.ivThumbnail);
 
-            // Buka DetailActivity saat item diklik
             binding.getRoot().setOnClickListener(v -> {
                 if (clickListener != null) clickListener.onItemClick(bookmark);
             });
 
-            // Hapus bookmark saat ikon ❌ diklik
+            // Hapus bookmark
             binding.btnDelete.setOnClickListener(v -> {
                 if (deleteListener != null) deleteListener.onDeleteClick(bookmark);
             });

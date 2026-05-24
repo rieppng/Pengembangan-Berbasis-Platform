@@ -49,7 +49,6 @@ public class BookmarkFragment extends Fragment {
         binding.rvBookmarks.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvBookmarks.setAdapter(adapter);
 
-        // Buka DetailActivity saat item diklik
         adapter.setOnBookmarkClickListener(bookmark -> {
             Intent intent = new Intent(requireContext(), DetailActivity.class);
             intent.putExtra(Constants.EXTRA_POST_ID, bookmark.id);
@@ -57,16 +56,15 @@ public class BookmarkFragment extends Fragment {
             startActivity(intent);
         });
 
-        // Hapus dari Room database saat tombol delete diklik
         adapter.setOnDeleteClickListener(bookmark ->
                 viewModel.removeBookmark(bookmark.id));
     }
 
     private void observeData() {
-        // LiveData dari Room — otomatis update saat data berubah
+        // LiveData dari Room
         viewModel.getAllBookmarks().observe(getViewLifecycleOwner(), bookmarks -> {
             adapter.setBookmarks(bookmarks);
-            // Tampilkan state kosong jika belum ada bookmark
+
             boolean isEmpty = bookmarks == null || bookmarks.isEmpty();
             binding.tvEmpty.setVisibility(isEmpty ? View.VISIBLE : View.GONE);
             binding.rvBookmarks.setVisibility(isEmpty ? View.GONE : View.VISIBLE);

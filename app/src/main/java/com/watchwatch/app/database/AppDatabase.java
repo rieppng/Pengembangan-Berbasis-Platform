@@ -6,15 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-/**
- * AppDatabase — singleton Room database untuk seluruh aplikasi.
- *
- * Pola singleton memastikan hanya ada satu koneksi database,
- * menghindari kondisi race condition saat diakses dari multiple thread.
- *
- * exportSchema = false: menonaktifkan export skema ke file JSON
- * (tidak diperlukan untuk project ini).
- */
 @Database(entities = {BookmarkEntity.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 

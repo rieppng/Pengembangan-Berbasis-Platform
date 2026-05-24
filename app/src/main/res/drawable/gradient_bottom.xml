@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!--
-        Gradient dari transparan (atas) ke hitam semi-transparan (bawah).
-        Dipakai sebagai overlay di atas gambar hero dan card trending
-        agar teks judul tetap terbaca meski gambarnya terang.
+        Gradient dari transparan hitam semi-transparan.
+        Untuk overlay di atas gambar hero dan card trending
     -->
     <gradient
         android:angle="270"

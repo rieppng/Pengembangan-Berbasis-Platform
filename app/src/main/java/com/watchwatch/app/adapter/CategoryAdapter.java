@@ -19,7 +19,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         void onCategoryClick(Category category);
     }
 
-    // Dua warna selang-seling: putih dan abu muda
     private static final String COLOR_WHITE    = "#FFFFFF";
     private static final String COLOR_GRAY     = "#F5F5F5";
 

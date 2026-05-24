@@ -17,13 +17,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * StaticPageActivity — menampilkan halaman statis dari WordPress
- * (About, Disclaimer, Privacy Policy, Kontak).
- *
- * Menerima slug dan judul via Intent, lalu fetch konten dari API,
- * dan render HTML-nya dengan Html.fromHtml() — tanpa WebView.
- */
 public class StaticPageActivity extends AppCompatActivity {
 
     public static final String EXTRA_SLUG  = "extra_slug";
@@ -86,7 +79,6 @@ public class StaticPageActivity extends AppCompatActivity {
     private void displayPage(WpPage page) {
         String rawHtml = page.getContentRendered();
 
-        // Bersihkan tag yang tidak dirender Html.fromHtml
         String cleanHtml = rawHtml
                 .replaceAll("<img[^>]*>", "")
                 .replaceAll("(?s)<!--.*?-->", "");

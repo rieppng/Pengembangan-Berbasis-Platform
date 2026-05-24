@@ -7,11 +7,6 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <!--
-        Toolbar dengan tombol back (←).
-        Judul diisi secara programatik di ListReviewFragment
-        sesuai nama kategori yang dipilih.
-    -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -42,7 +37,6 @@
                 android:paddingTop="8dp"
                 android:clipToPadding="false" />
 
-            <!-- Ditampilkan jika tidak ada artikel di kategori ini -->
             <TextView
                 android:id="@+id/tv_empty"
                 android:layout_width="wrap_content"

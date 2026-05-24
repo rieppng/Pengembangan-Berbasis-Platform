@@ -7,16 +7,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * ApiClient — Singleton untuk instance Retrofit.
- *
- * Pola Singleton memastikan hanya ada SATU instance Retrofit
- * di seluruh aplikasi, agar tidak boros memori.
- *
- * Cara pakai di mana saja cukup:
- *   ApiService api = ApiClient.getApiService();
- *   api.getLatestPosts(...).enqueue(...);
- */
 public class ApiClient {
 
     private static Retrofit retrofitInstance = null;
@@ -24,8 +14,7 @@ public class ApiClient {
     private static Retrofit getInstance() {
         if (retrofitInstance == null) {
 
-            // Logging interceptor: tampilkan detail request & response di Logcat
-            // Berguna untuk debug — bisa lihat data JSON yang masuk dari API
+            // Logging interceptor untuk logcat
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -42,11 +31,10 @@ public class ApiClient {
         return retrofitInstance;
     }
 
-    /** Ambil implementasi ApiService yang siap dipakai */
+    //implementasi ApiService
     public static ApiService getApiService() {
         return getInstance().create(ApiService.class);
     }
 
-    // Prevent instantiation
     private ApiClient() {}
 }

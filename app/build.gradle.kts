@@ -1,6 +1,4 @@
 plugins {
-    // id("com.android.application")
-    // Jika baris di atas error, ganti dengan baris ini (versi catalog):
     alias(libs.plugins.android.application)
 }
 
@@ -12,8 +10,8 @@ android {
         applicationId = "com.watchwatch.app"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.2"
+        versionCode = 2
+        versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,13 +31,13 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true   // auto-generate binding class tiap layout XML
-        buildConfig = true   // akses BuildConfig.VERSION_NAME di Settings
+        viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
-    // ── AndroidX Core ───────────────────────────────────────────────
+    //AndroidX Core
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
@@ -47,35 +45,38 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
-    // ── Navigation Component (Bottom Nav + Fragment management) ──────
+    //Navigation Component
     implementation("androidx.navigation:navigation-fragment:2.8.4")
     implementation("androidx.navigation:navigation-ui:2.8.4")
 
-    // ── Lifecycle: ViewModel & LiveData (MVVM pattern) ───────────────
+    //Lifecycle: ViewModel & LiveData
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.7")
     implementation("androidx.lifecycle:lifecycle-livedata:2.8.7")
 
-    // ── Retrofit2 (memanggil WordPress REST API) ─────────────────────
+    //Retrofit2 (WordPress REST API)
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
-    // ── OkHttp (HTTP client + logging untuk debug di Logcat) ─────────
+    //OkHttp (HTTP client)
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-    // ── Glide (load & cache gambar dari URL secara efisien) ──────────
+    //Glide (load & cache gambar dari URL)
     implementation("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
-    // ── Room (SQLite wrapper untuk fitur Bookmark offline) ───────────
+    //Room (SQLite wrapper)
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
 
-    // ── Jsoup (HTML parser: ekstrak link Shopee dari konten post) ────
+    //Jsoup (HTML parser)
     implementation("org.jsoup:jsoup:1.18.1")
 
-    // ── Testing ──────────────────────────────────────────────────────
+    //Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
+
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }

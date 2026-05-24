@@ -5,15 +5,6 @@ import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatDelegate;
 
-/**
- * WatchWatchApp — Application class yang dijalankan sebelum Activity manapun.
- *
- * Fungsinya: menerapkan preferensi dark mode yang tersimpan di SharedPreferences
- * saat aplikasi pertama kali dibuka, sehingga tema tidak "berkedip" saat launch.
- *
- * WAJIB didaftarkan di AndroidManifest.xml:
- * <application android:name=".WatchWatchApp" ...>
- */
 public class WatchWatchApp extends Application {
 
     public static final String PREFS_NAME  = "watchwatch_settings";

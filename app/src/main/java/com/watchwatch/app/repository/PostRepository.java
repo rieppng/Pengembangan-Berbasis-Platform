@@ -47,7 +47,6 @@ public class PostRepository {
         api.getPostDetail(id, 1).enqueue(callback);
     }
 
-    /** "post_title" → hanya cari di judul, tidak masuk ke konten/excerpt */
     public void searchPosts(String keyword, int perPage, Callback<List<Post>> callback) {
         api.searchPosts(keyword, perPage, 1, "post_title").enqueue(callback);
     }

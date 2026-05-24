@@ -11,13 +11,6 @@ import com.watchwatch.app.repository.BookmarkRepository;
 
 import java.util.List;
 
-/**
- * BookmarkViewModel — menggunakan AndroidViewModel (bukan ViewModel biasa)
- * karena BookmarkRepository membutuhkan Context untuk inisialisasi AppDatabase.
- *
- * AndroidViewModel menyediakan Application context yang aman digunakan
- * di ViewModel (tidak bocor memory seperti Activity/Fragment context).
- */
 public class BookmarkViewModel extends AndroidViewModel {
 
     private final BookmarkRepository repository;

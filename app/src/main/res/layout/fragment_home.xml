@@ -84,7 +84,7 @@
                 android:orientation="horizontal"
                 android:paddingHorizontal="8dp" />
 
-            <!-- Section Artikel Terbaru — tanpa tombol Lihat Semua -->
+            <!-- Section Artikel Terbaru -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

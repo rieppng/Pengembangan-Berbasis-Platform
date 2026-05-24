@@ -55,11 +55,8 @@ public class ListReviewViewModel extends ViewModel {
         };
 
         if (categoryId == 0) {
-            // categoryId = 0 artinya "Semua Artikel" (dari tombol Lihat Semua di Home)
-            // Fetch semua post tanpa filter kategori
             repository.getLatestPosts(Constants.POSTS_PER_PAGE, 1, callback);
         } else {
-            // Fetch post berdasarkan kategori yang dipilih
             repository.getPostsByCategory(categoryId, Constants.POSTS_PER_PAGE, 1, callback);
         }
     }

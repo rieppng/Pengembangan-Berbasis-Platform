@@ -24,8 +24,7 @@ import com.watchwatch.app.viewmodel.SearchViewModel;
 
 public class SearchFragment extends Fragment {
 
-    // Debounce: tunggu 500ms setelah user berhenti mengetik, baru panggil API.
-    // Tanpa ini, API dipanggil setiap huruf → boros dan lambat.
+
     private static final long DEBOUNCE_DELAY = 500;
 
     private FragmentSearchBinding binding;
@@ -70,7 +69,6 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Batalkan request debounce sebelumnya setiap kali ada perubahan teks
                 debounceHandler.removeCallbacksAndMessages(null);
 
                 String query = s.toString().trim();
@@ -81,11 +79,9 @@ public class SearchFragment extends Fragment {
                 }
 
                 if (query.length() < 2) {
-                    // Terlalu pendek, tunggu minimal 2 karakter
                     return;
                 }
 
-                // Jadwalkan pemanggilan API setelah DEBOUNCE_DELAY ms
                 debounceHandler.postDelayed(() -> viewModel.search(query), DEBOUNCE_DELAY);
             }
         });
@@ -115,7 +111,7 @@ public class SearchFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        // Batalkan semua debounce yang tertunda agar tidak crash setelah Fragment destroyed
+
         debounceHandler.removeCallbacksAndMessages(null);
         binding = null;
     }

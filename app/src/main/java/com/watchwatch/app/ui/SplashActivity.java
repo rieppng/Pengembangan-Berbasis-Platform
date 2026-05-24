@@ -21,8 +21,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private ActivitySplashBinding binding;
 
-    // Minimum waktu splash ditampilkan sebelum pindah ke MainActivity
-    private static final int SPLASH_DURATION = 2000; // 2 detik
+    private static final int SPLASH_DURATION = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,30 +33,19 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkApiAndNavigate() {
-        // Panggil endpoint ringan di background untuk verifikasi koneksi API.
-        // Request hanya 1 post (per_page=1) agar tidak boros bandwidth.
         ApiClient.getApiService()
                 .getLatestPosts(1, 1, 1)
                 .enqueue(new Callback<List<Post>>() {
                     @Override
-                    public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                        // API berhasil diakses.
-                        // Tidak perlu action di sini — navigasi sudah diatur oleh Handler.
-                    }
+                    public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {}
 
                     @Override
-                    public void onFailure(Call<List<Post>> call, Throwable t) {
-                        // Tidak ada koneksi atau API bermasalah.
-                        // Tetap navigasi ke MainActivity — biarkan Fragment
-                        // masing-masing yang menampilkan pesan error.
-                    }
+                    public void onFailure(Call<List<Post>> call, Throwable t) {}
                 });
 
-        // Navigasi ke MainActivity setelah SPLASH_DURATION selesai.
-        // Ini berjalan paralel dengan API check di atas.
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            finish(); // tutup SplashActivity agar user tidak bisa Back ke sini
+            finish();
         }, SPLASH_DURATION);
     }
 }

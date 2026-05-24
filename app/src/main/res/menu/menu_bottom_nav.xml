@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        ID tiap item HARUS sama dengan ID fragment di nav_graph.xml.
-        NavigationUI menggunakan kesamaan ID ini untuk tahu
-        Fragment mana yang harus ditampilkan saat tab diklik.
-    -->
-
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"

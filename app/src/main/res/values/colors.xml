@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#000000</color>
     <color name="white">#FAFAFA</color>
+    <color name="grey">#D3D3D3</color>
     <color name="bg_splash">#F4F4F4</color>
     <color name="analog">#8B5E3C</color>
     <color name="digital">#2563EB</color>

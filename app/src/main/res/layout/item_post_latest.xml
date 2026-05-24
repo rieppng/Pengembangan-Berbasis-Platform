@@ -14,11 +14,6 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
 
-        <!--
-            centerInside: gambar diperkecil hingga muat seluruhnya di dalam area.
-            Tidak ada cropping — gambar portrait maupun landscape tampil utuh.
-            Background abu digunakan untuk mengisi ruang kosong di sisi gambar.
-        -->
         <ImageView
             android:id="@+id/iv_thumbnail"
             android:layout_width="100dp"

@@ -29,7 +29,6 @@ public class SearchViewModel extends ViewModel {
     public LiveData<Boolean> getIsEmpty()     { return isEmpty; }
     public LiveData<Boolean> getShowHint()    { return showHint; }
 
-    /** Dipanggil setelah debounce dari SearchFragment */
     public void search(String query) {
         showHint.setValue(false);
         isLoading.setValue(true);
@@ -52,7 +51,6 @@ public class SearchViewModel extends ViewModel {
         });
     }
 
-    /** Dipanggil saat input dikosongkan — kembali ke state awal */
     public void clearResults() {
         results.setValue(new ArrayList<>());
         isEmpty.setValue(false);

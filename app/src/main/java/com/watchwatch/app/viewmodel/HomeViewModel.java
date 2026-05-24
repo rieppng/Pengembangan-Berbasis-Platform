@@ -56,8 +56,6 @@ public class HomeViewModel extends ViewModel {
     }
 
     private void loadLatest() {
-        // Ambil HOME_POSTS_LIMIT post (tidak perlu +1 lagi)
-        // post index 0 = hero banner, tapi SEMUA post tetap masuk ke list
         repository.getLatestPosts(Constants.HOME_POSTS_LIMIT, 1,
                 new Callback<List<Post>>() {
             @Override

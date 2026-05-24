@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:paddingBottom="32dp">
 
-        <!-- INFORMASI -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,7 +137,6 @@
             android:alpha="0.12"
             android:background="@android:color/black" />
 
-        <!-- TENTANG APLIKASI -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
