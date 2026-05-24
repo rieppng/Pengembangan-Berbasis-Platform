@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FAFAFA</color>
+    <color name="bg_splash">#F4F4F4</color>
+    <color name="analog">#8B5E3C</color>
+    <color name="digital">#2563EB</color>
+    <color name="mekanik">#374151</color>
+    <color name="smartwatch">#10B981</color>
 </resources>
