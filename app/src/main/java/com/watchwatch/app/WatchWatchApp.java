@@ -13,10 +13,10 @@ public class WatchWatchApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        applyDarkModePreference();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 
-    private void applyDarkModePreference() {
+    /*private void applyDarkModePreference() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean isDark = prefs.getBoolean(KEY_DARK_MODE, false);
         AppCompatDelegate.setDefaultNightMode(
@@ -24,4 +24,6 @@ public class WatchWatchApp extends Application {
                        : AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         );
     }
+
+     */
 }
